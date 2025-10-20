@@ -10,8 +10,13 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo 
-dnf5 install -y tmux cockpit-files ripgrep fd-find emacs neovim mullvad-vpn \
+dnf5 install -y tmux \
+	cockpit-files \
+	ripgrep \
+	fd-find \
+	emacs \
+	neovim \
+        mullvad-vpn \
 	&& dnf5 clean all 
 
 # Use a COPR Example:
